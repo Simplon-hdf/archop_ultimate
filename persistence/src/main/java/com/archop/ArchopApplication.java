@@ -8,7 +8,6 @@ public class ArchopApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ArchopApplication.class, args);
-		
 	}
 
 }

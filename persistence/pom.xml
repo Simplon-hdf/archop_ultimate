@@ -45,6 +45,7 @@
         <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
           <classifier>exec</classifier>
+          <mainClass>com.archop.ArchopApplication</mainClass>
         </configuration>
       </plugin>
     </plugins>
