@@ -20,9 +20,7 @@ Le projet est divisé en 3 modules :
 ## Configuration de la base de données
 
 La base de données doit être configurée avec :
-- URL : `jdbc:postgresql://localhost:5433/archop`
-- Username : `postgres`
-- Password : `root`
+- URL : `jdbc:postgresql://localhost:5432/archop`
 
 ## Installation
 
@@ -90,6 +88,70 @@ mvn spring-boot:run
   ```bash
   curl -X POST "http://localhost:8080/api/cart/checkout"
   ```
+
+## Collection Postman
+
+### Produits
+
+#### GET /api/products
+- Method: GET
+- URL: `http://localhost:8080/api/products`
+- Description: Récupère la liste de tous les produits
+
+#### POST /api/products
+- Method: POST
+- URL: `http://localhost:8080/api/products`
+- Headers: 
+  ```
+  Content-Type: application/json
+  ```
+- Body (raw JSON):
+  ```json
+  {
+    "name": "Produit Test",
+    "description": "Description du produit",
+    "price": 99.99
+  }
+  ```
+
+#### GET /api/products/{id}
+- Method: GET
+- URL: `http://localhost:8080/api/products/{id}`
+- Description: Récupère un produit par son ID
+
+### Panier
+
+#### GET /api/cart
+- Method: GET
+- URL: `http://localhost:8080/api/cart`
+- Description: Affiche le contenu du panier
+
+#### POST /api/cart/items
+- Method: POST
+- URL: `http://localhost:8080/api/cart/items`
+- Params:
+  - productId: ID du produit (number)
+  - quantity: Quantité désirée (number)
+- Example: `http://localhost:8080/api/cart/items?productId=1&quantity=2`
+
+#### DELETE /api/cart/items/{productId}
+- Method: DELETE
+- URL: `http://localhost:8080/api/cart/items/{productId}`
+- Description: Supprime un produit du panier
+
+#### GET /api/cart/total
+- Method: GET
+- URL: `http://localhost:8080/api/cart/total`
+- Description: Calcule le total du panier
+
+#### POST /api/cart/checkout
+- Method: POST
+- URL: `http://localhost:8080/api/cart/checkout`
+- Description: Valide le panier et le vide
+
+### Variables d'environnement Postman suggérées
+- `baseUrl`: http://localhost:8080
+- `apiPrefix`: /api
 
 ## Fonctionnalités
 
