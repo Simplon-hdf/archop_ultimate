@@ -88,6 +88,7 @@
               <artifactId>lombok</artifactId>
             </exclude>
           </excludes>
+          <mainClass>com.archop.ArchopApplication</mainClass>
         </configuration>
       </plugin>
     </plugins>

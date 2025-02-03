@@ -15,7 +15,7 @@ Le projet est divisé en 3 modules :
 - Java 21
 - Maven
 - PostgreSQL 16.6
-- Base de données `archop` créée sur le port 5433
+- Base de données `archop` créée sur le port 5432
 
 ## Configuration de la base de données
 
