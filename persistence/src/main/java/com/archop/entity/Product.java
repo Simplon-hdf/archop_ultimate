@@ -1,4 +1,4 @@
-package com.archop.model;
+package com.archop.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

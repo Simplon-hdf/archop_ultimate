@@ -93,8 +93,8 @@
     </plugins>
   </build>
   <modules>
+    <module>persistence</module>
     <module>business</module>
     <module>presentation</module>
-    <module>persistence</module>
   </modules>
 </project>
