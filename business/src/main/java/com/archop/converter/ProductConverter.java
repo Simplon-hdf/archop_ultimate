@@ -12,6 +12,11 @@ import java.util.stream.Collectors;
 public class ProductConverter {
     
     public ProductDTO entityToDto(Product product) {
+
+        if (product == null) { 
+            return null;
+        }
+        
         ProductDTO dto = new ProductDTO();
         BeanUtils.copyProperties(product, dto);
         return dto;
