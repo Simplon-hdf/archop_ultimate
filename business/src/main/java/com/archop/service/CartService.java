@@ -30,7 +30,7 @@ public class CartService {
         CartItemDTO cartItem = items.getOrDefault(productId, CartItemDTO.builder()
                 .productId(productId)
                 .productName(product.getName())
-                .price(product.getPrice())
+                .price(product.getSellingPrice())
                 .quantity(0)
                 .build());
 
