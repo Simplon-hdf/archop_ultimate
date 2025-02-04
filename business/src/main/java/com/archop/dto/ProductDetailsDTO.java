@@ -1,19 +1,20 @@
 package com.archop.dto;
 
-import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ProductDTO {
-    private Long id;
-    private String name;
-    private String description;
-    private Double sellingPrice;
+public class ProductDetailsDTO {
 
-} 
+    private Double purchasePrice;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
+}
