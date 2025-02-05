@@ -3,7 +3,6 @@ package com.archop.dto;
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
