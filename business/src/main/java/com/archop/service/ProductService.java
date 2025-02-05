@@ -2,8 +2,10 @@ package com.archop.service;
 
 import com.archop.converter.ProductConverter;
 import com.archop.dto.ProductDTO;
+import com.archop.dto.ProductDetailsDTO;
 import com.archop.entity.Product;
 import com.archop.repository.ProductRepository;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,17 +31,17 @@ public class ProductService {
                 .orElseThrow(() -> new RuntimeException("Product not found"));
     }
 
-    public ProductDTO createProduct(ProductDTO productDTO) {
-        Product product = productConverter.dtoToEntity(productDTO);
+    public ProductDTO createProduct(ProductDTO productDTO, ProductDetailsDTO productDetailsDTO) {
+        Product product = productConverter.dtoToEntity(productDTO, productDetailsDTO);
         product = productRepository.save(product);
         return productConverter.entityToDto(product);
     }
 
-    public ProductDTO updateProduct(Long id, ProductDTO productDTO) {
+    public ProductDTO updateProduct(Long id, ProductDTO productDTO, ProductDetailsDTO productDetailsDTO) {
         Product existingProduct = productRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Product not found"));
         
-        Product updatedProduct = productConverter.dtoToEntity(productDTO);
+        Product updatedProduct = productConverter.dtoToEntity(productDTO, productDetailsDTO);
         updatedProduct.setId(existingProduct.getId());
         updatedProduct = productRepository.save(updatedProduct);
         

@@ -53,8 +53,8 @@ mvn spring-boot:run
 - **Créer un produit**
   ```bash
   curl -X POST -H "Content-Type: application/json" \
-       -d '{"name":"Produit", "description":"Description", "price":99.99}' \
-       http://localhost:8080/api/products
+     -d '{"name":"Produit", "description":"Description", "sellingPrice":99.99, "purchasePrice": 69.99}' \
+     http://localhost:8080/api/products
   ```
 
 - **Voir un produit**
@@ -110,7 +110,8 @@ mvn spring-boot:run
   {
     "name": "Produit Test",
     "description": "Description du produit",
-    "price": 99.99
+    "sellingPrice": 99.99,
+    "purchasePrice": 69.99
   }
   ```
 
